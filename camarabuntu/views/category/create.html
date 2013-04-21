@@ -1,0 +1,26 @@
+<script src="js/nicEdit.js" type="text/javascript"></script>
+<script type="text/javascript">bkLib.onDomLoaded(nicEditors.allTextAreas);</script>
+<h2>Create/Edit Category</h2>
+<a class="backlink" href="index.php?c=<?php echo $_GET['c']; ?>&a=list_all">Back</a>
+<div>
+    <form  method="POST" enctype="multipart/form-data"/>
+    <label>Name</label>
+    <input type="text" name="name" value="<?php echo $fields['name'] ?>"/>
+    
+    <label>Network URL</label>
+    
+    <input type="text" name="depends_on_url_available" value="<?php echo $fields['depends_on_url_available'] ?>"/>
+    <p>
+    If you enter a url in this field, then the category will only be shown if that URL is accessible.
+    If a lab is networked, then the RACHEL repository and possibly more resources should be accessible over the network,
+    entering a URL of one of those resources here could be used to show a category only if that resource is available
+    </p>
+    <p>
+    It could also be used to show  a category if the internet is available
+    </p>
+    
+    
+    <input class="submit" type="submit" value="submit" />
+    
+    </form>
+</div>

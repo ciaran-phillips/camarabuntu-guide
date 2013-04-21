@@ -1,0 +1,85 @@
+<script src="js/nicEdit.js" type="text/javascript"></script>
+<script type="text/javascript">bkLib.onDomLoaded(nicEditors.allTextAreas);</script>
+<h2>Create/Edit Application</h2>
+<a class="backlink" href="index.php?c=<?php echo $_GET['c']; ?>&a=list_all">Back</a>
+
+<div>
+    <form  method="POST" enctype="multipart/form-data"/>
+    <label>Name</label>
+    <input type="text" name="name" value="<?php echo $fields['name'] ?>"/>
+    
+    <label>Executable location</label>
+    <input type="text" name="executable" value="<?php echo $fields['executable'] ?>"/>
+    
+    
+    
+    <label>Thumbnail Image</label>
+    <input type="file" name="file" value=""/>
+    <?php
+    
+    if ($fields['image_url']) {
+        echo '<input type="hidden" name="image_url" value="'.$fields['image_url'].'"/>';
+        echo "current image (upload another to replace): <img src='".$fields['image_url']."'/>";  
+    }
+    ?>
+    
+    
+    <label>Screenshot</label>
+    <input type="file" name="screenshot" value=""/>
+    <?php
+    
+    if ($fields['screenshot_url']) {
+        echo '<input type="hidden" name="screenshot_url" value="'.$fields['screenshot_url'].'"/>';
+        echo "current image (upload another to replace): <img src='".$fields['screenshot_url']."'/>";  
+    }
+    ?>
+    
+    
+    <label>Subject</label>
+        <?php foreach ($subjects as $key => $subject): 
+            $checked = '';
+            foreach($current_subjects as $current_subject) {
+                if ($subject['rowid'] == $current_subject['subject']) {
+                    $checked = 'checked = "checked"';
+                }
+            }
+            ?>
+            <div class="checkbox">
+                <input <?php echo $checked ?> type="checkbox" class="checkbox" name="subjects[]" value="<?php echo $subject['rowid'] ?>" <?php echo $subject['name'] ?> />
+                <?php echo $subject['name']; ?>
+            </div>
+        <?php endforeach; ?>
+    
+        
+        <label>Level</label>
+        
+        <?php foreach ($levels as $key => $level): ?>
+            <?php 
+                $checked = '';
+                foreach($current_levels as $current_level) {
+                    if ($level['rowid'] == $current_level['level']) {
+                        $checked = 'checked="checked"';
+                        
+                    }
+                }
+            ?>
+            <div class="checkbox">
+            <input type="checkbox" class="checkbox" name="levels[]" <?php echo $checked ?> value="<?php echo $level['rowid'] ?>"<?php echo $level['name'] ?> />
+            <?php echo $level['name']; ?>
+            </div>
+        <?php endforeach; ?>
+    
+    <label>Description</label>
+    <textarea name="description">
+        <?php echo $fields['description']; ?>
+    </textarea>
+    
+    <label>Content</label>
+    <textarea name="content">
+        <?php echo $fields['content']; ?>
+    </textarea>
+    
+    <input class="submit" type="submit" value="submit" />
+    
+    </form>
+</div>

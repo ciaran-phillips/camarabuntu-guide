@@ -1,0 +1,72 @@
+<script src="js/nicEdit.js" type="text/javascript"></script>
+<script type="text/javascript">bkLib.onDomLoaded(nicEditors.allTextAreas);</script>
+<h2>Create/Edit Page</h2>
+<a class="backlink" href="index.php?c=<?php echo $_GET['c']; ?>&a=list_all">Back</a>
+<div>
+    <form  method="POST" enctype="multipart/form-data"/>
+    <label>Name</label>
+    <input type="text" name="name" value="<?php echo $fields['name'] ?>"/>
+    
+    
+    <label>Executable Location (only enter a value if you want this page link to launch an application)</label>
+    <input type="text" name="executable" value="<?php echo $fields['executable'] ?>"/>
+    
+    
+    <label>Image</label>
+    <input type="file" name="file" value=""/>
+    <?php
+    
+    if ($fields['image_url']) {
+        echo '<input type="hidden" name="image_url" value="'.$fields['image_url'].'"/>';
+        echo "current image (upload another to replace): <img src='".$fields['image_url']."'/>";  
+    }
+    ?>
+    <label>External URL</label>
+    (If you want this to link to an external page / location, set a value
+    for external URL here, otherwise you can leave it blank)
+    <input type="text" name="external_url" value="<?php echo $fields['external_url'] ?>"/>
+    
+    
+    <label>Category</label>
+    <select name="category">
+        <?php foreach ($categories as $key => $category): ?>
+            <?php 
+                if ($category['rowid'] == $fields['category']) {
+                    $selected = 'selected';
+                }
+                else {
+                    $selected = "";
+                }
+            ?>
+            <option <?php echo $selected ?> value="<?php echo $category['rowid'] ?>"><?php echo $category['name'] ?></option>
+        
+        <?php endforeach; ?>
+    </select>
+    
+    <!--
+    <label>Network URL</label>
+    
+    <input type="text" name="depends_on_url_available" value="<?php echo $fields['depends_on_url_available'] ?>"/>
+    <p>
+    If you enter a url in this field, then the category will only be shown if that URL is accessible.
+    If a lab is networked, then the RACHEL repository and possibly more resources should be accessible over the network,
+    entering a URL of one of those resources here could be used to show a category only if that resource is available
+    </p>
+    <p>
+    It could also be used to show  a category if the internet is available
+    </p>
+    -->
+    <label>Description</label>
+    <textarea name="description">
+        <?php echo $fields['description']; ?>
+    </textarea>
+    
+    <label>Content</label>
+    <textarea name="content">
+        <?php echo $fields['content']; ?>
+    </textarea>
+    
+    <input class="submit" type="submit" value="submit" />
+    
+    </form>
+</div>

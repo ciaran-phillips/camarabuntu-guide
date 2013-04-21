@@ -1,0 +1,63 @@
+
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Camara</title>
+        <link rel="stylesheet" type="text/css" href="css/reset.css" />
+        <link rel="stylesheet" type="text/css" href="css/main.css" />
+        
+        <script type="text/javascript">var available = false;</script>
+        <script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
+        <script type="text/javascript" src="js/functions.js"></script>
+        
+        <script type="text/javascript">
+        $("document").ready(function() {
+				if(location.protocol != "http:") {
+					$("a").each(function() {
+						var linkstr = $(this).attr("href");
+						linkstr = linkstr.replace("?","%3F");
+						$(this).attr("href", linkstr);
+					});
+				}
+        
+			});
+			
+        </script>
+    </head>
+    
+    <body>
+        <div id="wrapper">
+            <div id="header">
+                <div class="inner">
+                    <h1>Camarabuntu Guide</h1>
+                    
+                    <a href="/index.php">
+                        <img id="logo" src="img/logo.png" alt="camara" />
+                    </a>
+                    
+                    <div id="contact" class="right">
+			<!--
+                        <div class="left">
+                            Tel: <br /><br />
+                            Email:    
+                        </div>
+                        <div class="right">
+                            +274 (0) 770400703
+                            +274 (0) 788956877
+                            kenya@camara.ie
+                         </div>
+			-->
+                    </div>
+                    <div class="clearing"></div>
+                </div>
+            </div>
+            
+            <div class="inner">
+                <?php include($params['content']); ?>
+            
+            </div>
+            
+        </div>
+    </body>
+</html>
+

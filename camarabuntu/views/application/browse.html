@@ -1,0 +1,74 @@
+<a class="backlink" href="index.php?c=category&a=index">Back</a>
+<h2 id="edulevel">Education Levels</h2>
+<?php foreach($levels as $level): ?>
+    <a class="container small" href="index.php?c=application&a=browse&level=<?php echo $level['rowid']; ?>#edulevel">
+        <div class="imgHolder">
+            <img src="<?php echo $level['image_url'] ?>"/>
+        </div>
+        <span><?php echo $level['name']; ?></span>
+    </a>
+
+<?php endforeach; ?>
+<?php if (isset($subjects)): ?>
+<div class="clearing"></div>
+<h2 id="subjects">Subjects</h2>
+<?php foreach($subjects as $subject): ?>
+    <a class="container small" href="index.php?c=application&a=browse&level=<?php echo $_GET['level']; ?>&subject=<?php echo $subject['rowid']; ?>#subjects">
+        
+        
+        <div class="imgHolder">
+            <img src="<?php echo $subject['image_url']; ?>" />
+        </div>
+        <span><?php echo $subject['name']; ?></span>
+        
+    </a>
+<?php endforeach; ?>
+<?php endif; ?>
+
+<?php if (isset($apps) && count($apps) > 0): ?>
+<div class="clearing"></div>
+
+<h2 id="app">Applications</h2>
+<?php foreach($apps as $app): ?>
+    <?php 
+    if (isset($_GET['app']) && $app['rowid'] == $_GET['app']){
+        $class="active";
+        $currentApp = $app;
+    }
+    ?>
+    
+    
+    <a class="container small" 
+        href="index.php?c=application&a=browse&level=<?php echo $_GET['level']; ?>&subject=<?php echo $_GET['subject']; ?>&app=<?php echo $app['rowid'] ?>#apps">
+        <div class="imgHolder">
+            <img src="<?php echo $app['image_url'] ?>" />
+        </div>
+        <span><?php echo $app['name']; ?></span>
+    </a>
+    
+
+
+<?php endforeach; ?>
+<?php endif; ?>
+
+<?php if (isset($currentApp)): ?>
+    <div class="clearing">
+    </div>
+    
+    <div id="apps">
+    <h2><?php echo $currentApp['name'] ?></h2>
+    <p>
+        <?php echo $currentApp['description']; ?>
+    </p>
+    <p>
+    <a class="link" href="index.php?c=application&a=view&id=<?php echo $currentApp['rowid']; ?>">
+        Full Description
+        </a>
+        
+        &nbsp;&nbsp;
+    <a class="link" href="runapp:<?php echo $currentApp['executable']; ?>">
+        Run application
+        </a>
+    </p>
+    </div>
+<?php endif; ?>

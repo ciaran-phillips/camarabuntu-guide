@@ -1,0 +1,16 @@
+
+<div class="section">
+    <a class="backlink" href="<?php echo $_SERVER['HTTP_REFERER']; ?>" >Back</a>
+    <h2><?php echo $application['name'] ?></h2>
+    <div id="content">
+        <img id="screenshot" src="<?php echo $application['screenshot_url'] ?>" />
+        <?php echo $application['content']; ?>
+        
+        <p>
+                
+        <a class="link" href="runapp:<?php echo $application['executable']; ?>">
+            Run application
+            </a>
+        </p>
+    </div>
+</div>

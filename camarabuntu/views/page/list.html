@@ -1,0 +1,52 @@
+<a href="index.php?c=<?php echo $_GET['c']; ?>&a=create" class="button">Create New</a>
+    
+    <div class="clearing"></div>
+<div id="dashboardContent">
+    <div id="msg"></div>
+<table>
+    <thead>
+        <tr>
+            <th>Image</th>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Description</th>
+            <th>Category</th>
+        </tr>
+    </thead>
+<?php foreach ($models as $key => $model): ?>
+    <tr id="<?php echo $model['rowid']; ?>">
+        
+        <td><img src="<?php echo $model['image_url']; ?>"/></td>
+        <td><?php echo $key; ?></td>
+        <td><?php echo $model['name'] ?></td>
+        <td><?php echo $model['description']; ?></td>
+        <td><?php echo $model['category'] ?></td>
+        <td><a data="<?php echo $model['rowid'] ?>" href="index.php?c=<?php echo $_GET['c']; ?>&a=create&id=<?php echo $model['rowid']; ?>" class="button edit">Edit</a></td>
+        <td><a name ="<?php echo $model['name'] ?>" data="<?php echo $model['rowid'] ?>" href="#" class="button delete">Delete</a></td>
+    </tr>
+
+<?php endforeach; ?>
+</table>
+</div>
+
+<script type="text/javascript">
+    $(".delete").click(function() {
+            var controller = "<?php echo $_GET['c']; ?>";
+            var modelid = $(this).attr("data");
+            var name = $(this).attr("name");
+            if (confirm("Are you sure you want to delete " + controller + " '" + name + "'")) {
+                var dest = "index.php?c=" + controller + "&a=delete";
+                $.ajax({
+                  url: dest,
+                  context: document.body,
+                  data : {id : modelid },
+                  type: 'POST'
+                }).done(function(msg) {
+                    $("#msg").show();
+                  $("#msg").html(msg);
+                  $("#"+modelid).hide();
+                });
+            }
+        }
+    );
+</script>

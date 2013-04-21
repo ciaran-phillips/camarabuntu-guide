@@ -1,0 +1,362 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+.inner #softwareMenu .backlink2 {
+    margin-top:-40px;
+    
+}
+#loading img{
+	margin-right:10px;
+	margin-bottom:-14px;
+}
+
+.formBlock {
+	background-color:#f2f2f2;
+	border:1px solid #ccc;
+	padding:10px;
+	margin:30px 0px;
+}
+.appForm input, .appForm textarea, .appForm select, .appForm img {
+	margin:20px 0px;
+}
+.appForm input.checkbox {
+	margin:10px 0px;
+}
+#wrapper {
+    background: -moz-linear-gradient(#EEEEFF, #FFFFFF) repeat scroll 0 0 transparent;
+    color: #444444;
+    font-family: 'arial';
+    min-height: 800px;
+}
+.inner {
+    width:85%;
+    min-width:900px;
+    margin-left:auto;
+    margin-right:auto;
+}
+h1 {
+    color: white;
+    font-family: 'sans';
+    font-weight: lighter;
+    margin-top: 30px;
+    text-align: center;
+    width: 100%;
+}
+#contact {
+    padding:10px 0px 10px 0px;
+    width:210px;
+    color:white;
+    margin-top:-70px;
+}
+.right {
+    width:70%;
+    float:right;
+    text-align:right;
+}
+.left {
+    text-align:left;
+    font-weight:bold;
+    color:#8ec742;
+    width:20%;
+    float:left;
+}
+#screenshot {
+    float:right;
+    margin-left:25px;
+    max-width:400px;
+    padding:5px;
+    background-color:#ddd;
+    border:1px solid #ccc;
+}
+a.inlineLink {
+    text-decoration: none;
+    color:#0D8AFF;
+}
+a:hover {
+    text-decoration:underline;
+}
+.backlink {
+    color:#0D8AFF;
+    float:right;
+    text-decoration:none;
+    margin-top:8px;
+    margin-right:0px;
+    line-height:1em;
+}
+.backlink:hover {
+    text-decoration: underline;
+}
+#logo {
+    margin-top: -74px;
+    display: block;
+    float: none;
+    width:240px;
+    vertical-align: middle;
+    margin-left: -10px;
+}
+.clearing {
+    clear: both;
+}
+#header {
+    background: none repeat scroll 0 0 #222220;
+    border-bottom: 2px solid #CCCCCC;
+    box-shadow: 0 10px 15px #EEEEEE;
+    height: 100px;
+    padding: 1px;
+}
+h2 {
+    border-bottom: 1px solid #DDDDDD;
+    color: #0D8AFF;
+    font-size: 1.5em;
+    font-weight: normal;
+    margin-left: 0px;
+    margin-right: 0px;
+    padding: 0;
+}
+h3 {
+    color:#838383;
+    font-weight:normal;
+    font-size:1.3em;
+    padding:0;
+    text-align:center;
+    margin-bottom:0px;
+    margin-top:5px;
+}
+.container {
+    border: 3px solid #EEEEEE;
+    border-radius: 10px 10px 10px 10px;
+    box-shadow: 0 0 20px #DDDDDD;
+    color: #444444;
+    display: block;
+    float: left;
+    height:190px;
+    background-color:white;
+    font-size: 0.9em;
+    margin-bottom: 30px;
+    margin-right: 30px;
+    padding: 10px;
+    text-decoration: none;
+    width: 200px;
+}
+.container p {
+    line-height:1.4em;
+}
+a.container span {
+    line-height:1em;
+}
+div .small {
+    font-size: 1.1em;
+    height: 100px;
+    margin-bottom: 15px;
+    margin-right: 20px;
+    padding-top: 12px;
+    text-align: center;
+    vertical-align: middle;
+    width: 150px;
+}
+.app {
+    color: #444444;
+    display: block;
+    float: left;
+    margin-left: 20px;
+    padding: 5px;
+    text-decoration: none;
+    width: 140px;
+}
+.app:hover, .activeapp {
+    border: 2px solid #D9D9D9;
+    border-radius: 4px 4px 4px 4px;
+}
+.app img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 60px;
+}
+.app p {
+    float: left;
+    margin: 5px;
+}
+.container:hover {
+    box-shadow: 0 0 20px #6DABFF;
+    color: #0D8AFF;
+	text-decoration:none;
+}
+.container:hover h3 {
+    color:#6DABFF;
+}
+.active {
+    text-decoration: underline;
+}
+#appdesc img {
+    float: left;
+    margin: -15px 20px 20px;
+    width: 120px;
+}
+.button {
+    margin-right: 20px;
+    text-decoration: none;
+}
+.button:hover {
+    text-decoration: underline;
+}
+#appdesc h2 {
+    font-weight: bold;
+}
+#appDescDiv p {
+    margin-left: 0px;
+}
+div.section {
+    margin-left: auto;
+    line-height:1.6em;
+    margin-right: auto;
+    width: 100%;
+}
+.container img {
+    max-height:80px;
+    margin-left:auto;
+    margin-right:auto;
+    display:block;
+}
+#softwareMenu .container img, #appMenu .container img {
+    max-height:55px;
+    max-width:100%;
+}
+div.imgHolder {
+    padding:5px;
+    width:auto;
+    margin-right:auto;
+    margin-left:auto;
+    height:80px;
+    width:120px;
+}
+a.small div.imgHolder {
+    height:60px;
+}
+
+input {
+    display:block;
+    margin:10px 0px;
+    width:400px;
+}
+input.submit {
+    width:auto;
+}
+input.checkbox {
+    display:inline;
+}
+label {
+    display:block;
+    margin:20px 0 10px;
+}
+textarea {
+    width:600px;
+    height:300px;
+}
+form {
+    padding:0px 20px;
+}
+#page_edit form textarea{
+    width: 75%;
+
+    height:600px;
+}
+
+
+#nav li {
+    display:block;
+    float:left;
+    list-style:none;
+    border-right:1px solid #ccd;
+}
+#nav li a {
+
+    background-color:#eeeeff;
+    color:#444;
+    display:block;
+    padding:5px 15px;
+    text-decoration:none;
+    
+}
+#nav li a:hover, #nav li a.active {
+    background:#ccccdd;
+}
+#nav li:last-child {
+    border:0;
+}
+#nav {
+    display:block;
+}
+.link {
+    text-decoration:none;
+}
+.link:hover {
+    text-decoration:underline;
+}
+#dashboardContent {
+    display:block;
+    width:100%;
+}
+form img {
+    max-width:400px;
+    display:block;
+}
+.admin table {
+    width:100%;
+}
+.admin table tr{
+    height:50px;
+    width:100%;
+    margin:0;
+}
+.admin table td img{
+    height:45px;
+}
+.admin table td {
+    margin:0;
+    border:0;
+    padding:5px 10px;
+}
+.admin table tr:nth-child(2n) {
+    background-color:#eeeeff;
+}
+
+a.button {
+    border:1px solid #ccc;
+    border-radius:4px;
+    background-image:-webkit-linear-gradient(#eee,#ddd);
+    background-image:-moz-linear-gradient(#eee,#ddd);
+    color:#444;
+    padding:5px;
+}
+
+a.button:active, a.button:active:hover {
+    background-image:-webkit-linear-gradient(#ddd,#eee);
+    background-image:-moz-linear-gradient(#ddd,#eee);
+}
+
+a.button:hover {
+    background-image:-webkit-linear-gradient(#f9f9f9,#ddd);
+    text-decoration:none;
+    background-image:-moz-linear-gradient(#f9f9f9,#ddd);
+}
+#msg {
+    display:none;
+    background-color:#f4f4ff;
+    border:2px solid #dde;
+    padding:10px;
+    margin:10px;
+}
+#nav {
+    height:0px;
+    padding-left:0;
+}
+table {
+    background-color:#f5f5f5;
+    margin:10px 0;
+    border:1px solid #ddd;
+}
+.admin .button {
+    float:right;
+}

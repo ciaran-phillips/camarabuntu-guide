@@ -1,0 +1,73 @@
+
+<?php 
+    foreach ($categories as $key => $category) {
+        $content = "";
+        $hasPages = false;
+        $counter = 0;
+        foreach($pages as $key => $page){
+            if ($page['category'] == $category['rowid']) {
+                $hasPages = true;
+                $counter++;
+                $content .= '<a class="container" href="';
+                
+                // Check whether external_url is empty (trim whitespace, just in case a space was entered)
+                if (!trim($page['external_url'])) {
+                    $content .= 'index.php?c=page&a=view&id=';
+                    $content .= $page['rowid'] . '">';
+                    
+                }
+                else {
+                    $content .= $page['external_url'];
+                    $content .= '">';
+                }
+                $content .= '<div class="imgHolder">';
+                $content .= '<img src="';
+                $content .= $page['image_url'];
+                $content .= '" /></div>';
+                
+                $content .= '<h3>' . $page['name'] . '</h3>';
+                $content .= '<p>';
+                $content .= $page['description'];
+                $content .= '</p>';
+                $content .= '</a>';
+                
+            }
+        }
+        if ($hasPages) {
+            if (trim($category['depends_on_url_available']))
+                echo '<div class="section network" urldata="'.$category['depends_on_url_available'].'">';
+            else
+                echo '<div class="section">';
+            echo '<h2>';
+            echo $category['name'];
+            echo '</h2>';
+            echo $content;
+            echo '</div><div class="clearing"></div>';
+        }
+    } 
+        
+    ?>
+<script type="text/javascript">
+    
+    
+    $(".network").each(function () {
+        $(this).hide();
+    });
+    
+    $(".network").each(function () {
+        
+        var url =  $(this).attr("urldata");
+        
+        $.ajax({
+            url: url, 
+            crossDomain:true,
+            data: {}, 
+            context: this, 
+            cache: false
+        }).done(function(data, textStatus, jqXHR){
+            alert(jqXHR.statusCode);
+            $(this).show();
+        });
+    });
+    
+</script>

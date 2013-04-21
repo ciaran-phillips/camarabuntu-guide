@@ -1,0 +1,83 @@
+<html>
+    <head>
+        <title>Camara</title>
+        <link rel="stylesheet" type="text/css" href="css/reset.css" />
+        <link rel="stylesheet" type="text/css" href="css/main.css" />
+        
+        <script type="text/javascript">var available = false;</script>
+        <script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
+        <script type="text/javascript" src="js/functions.js"></script>
+        <script type="text/javascript">
+            function check_network() {
+                var test = $.ajax(rachelPath).done(function(data, textData, jqxhr){
+		
+            var elem = document.getElementById("network_section");
+            elem.style.display = "block";
+            elem = document.getElementById("share_drive_link");
+            elem.href = "camara:nautilus%20" + serverPath;
+            
+            elem = document.getElementById("wikipedia_link");
+            elem.href = wikipediaPath;
+
+            elem = document.getElementById("tessa_link");
+            elem.href = tessaPath;
+	});
+}
+        </script>
+    </head>
+    
+    <body onload="check_network()">
+        <div id="wrapper">
+            <div id="header">
+                <div class="inner">
+                    <h1>Camarabuntu Guide</h1>
+                    
+                    <a href="#">
+                        <img id="logo" src="img/logo.png" alt="camara" />
+                    </a>
+                    
+                    <div id="contact" class="right">
+			<!--
+                        <div class="left">
+                            Tel: <br /><br />
+                            Email:    
+                        </div>
+                        <div class="right">
+                            +274 (0) 770400703
+                            +274 (0) 788956877
+                            kenya@camara.ie
+                         </div>
+			-->
+                    </div>
+                    <div class="clearing"></div>
+                </div>
+            </div>
+            
+            <div class="inner">
+                <div class="admin">
+                    <a style="margin-top:5px;" class="button" href="?c=<?php echo $_GET['c'] ?>&a=<?php echo $_GET['a'] ?>&export=true">Export Static Site</a>
+                    <div style="border-bottom:1px solid #dde;padding:5px 0;" class="clearing"></div>
+                    <ul id="nav">
+                        
+                        <li><a <?php if ($_GET['c']=='page') echo 'class="active"'; ?>
+                                href="index.php?c=page&a=list_all">Pages</a></li>
+                        
+                        <li><a <?php if ($_GET['c']=='category') echo 'class="active"'; ?>
+                                href="index.php?c=category&a=list_all">Categories</a></li>
+                        
+                        <li><a <?php if ($_GET['c']=='subject') echo 'class="active"'; ?>
+                                href="index.php?c=subject&a=list_all">Subjects</a></li>
+                        
+                        <li><a <?php if ($_GET['c']=='level') echo 'class="active"'; ?>
+                                href="index.php?c=level&a=list_all">Levels</a></li>
+                        
+                        <li><a <?php if ($_GET['c']=='application') echo 'class="active"'; ?>
+                                href="index.php?c=application&a=list_all">Applications</a></li>
+                    </ul>
+                    <?php include($params['content']); ?>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
+
