@@ -1,0 +1,3 @@
+[submodule "wiki"]
+	path = wiki
+	url = https://ciph57@bitbucket.org/ciph57/camarabuntu-guide-2.git/wiki
